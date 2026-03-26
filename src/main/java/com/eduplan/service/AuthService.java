@@ -3,6 +3,8 @@ package com.eduplan.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 import com.eduplan.model.User;
 import com.eduplan.repository.UserRepository;
 
@@ -27,5 +29,10 @@ public class AuthService {
         }
 
         return null;
+    }
+
+    // ✅ ADD THIS METHOD
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }
