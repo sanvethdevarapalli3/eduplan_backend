@@ -1,14 +1,14 @@
-# Use Java 17
 FROM eclipse-temurin:17-jdk-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Copy everything
 COPY . .
 
-# Build the app
+# Fix permission issue for mvnw
+RUN chmod +x mvnw
+
+# Build the Spring Boot app
 RUN ./mvnw clean package -DskipTests
 
-# Run the jar
+# Run the generated jar
 CMD ["java", "-jar", "target/*.jar"]
