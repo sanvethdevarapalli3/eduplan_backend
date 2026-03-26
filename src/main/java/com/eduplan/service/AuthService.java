@@ -31,7 +31,7 @@ public class AuthService {
         return null;
     }
 
-    // ✅ ADD THIS METHOD
+    // ✅ ADD THIS METHOD (THIS IS MISSING)
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
